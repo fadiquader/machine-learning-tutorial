@@ -113,6 +113,17 @@ P(A|B) = P(A∩B)/P(B)
 
 P(A|B) means probablity of A given B
 
+Formula:
+The formula for conditional probability is:
+
+P(A | B) = P(A and B) / P(B)
+
+This reads as:
+
+P(A | B): "The probability of A happening given that B has happened."
+P(A and B): "The probability that A and B happen together."
+P(B): "The probability that B happens."
+
 ### Random Variables  
 The types of variables whose values are given by random processes. What this means is random variables maps the outcome of a random process to numbers that can be used in probability theory. An example of a random process is throwing a dice. The outcome is clearly random and cannot be predetermined. However, we can assign numbers to those random outcomes, the numbers so assigned would be quantities of a random variable. Random variables are also measurable and contain numbers like regular variables in algebra but the key difference is that they are produced by a random process.
 
@@ -125,5 +136,63 @@ X = getting a number greater than 3 after rolling a dice once
 P(X > 3)
 
 ### Bayes’ Theorem and Naive Bayes Algorithm
+Using Bayes’ theorem we can calculate the probability of an event A, given event B occurred, as the product of probability of B given A and the probability of A all divided by the probability of B.  
 
+P(A|B) = P(B|A)P(A)/P(B)
 
+**The Key Idea:**
+You start with an initial belief about the probability of something (called the "prior").
+Then, you get new evidence.
+
+Bayes’ theorem helps you combine the prior with the new evidence to get an updated probability (called the "posterior").
+
+**Example**:
+
+Say we draw a single card from a deck of playing cards, what is the probability that the card so drawn is a king, given evidence (additional information) whether it is a face card.  
+       
+First let us define define Bayes theorem in line with the question.  
+       
+P(King|Face) = P(Face|King)P(King)/P(Face)  
+       
+Where;  
+       
+P(King|Face) = probability the card is a king given it is a face card  
+       
+P(Face|King) = probability the card is a face card given it is a king = 1 because all kings are face cards (contains a face).
+       
+P(King) = probability the card is a king  is 4 / 52 = 1 / 3
+       
+P(Face) = probability the card is a face card ( 4 face types * 3 cards jack, queen, and king)) 12 / 52 = 3 / 13
+
+P(King|Face) = (1/13)(1)/(3/13) = 1/3
+
+### Naive Bayes algorithm 
+Is an application of Bayes’ theorem as a classification algorithm with the explicit assumption that all features or predictors are independent.
+
+It's called "naive" because it makes a big assumption: it assumes that all features (variables) are independent of each other, which is often not true in real life. Despite this, it works surprisingly well in many situations.
+
+**What does it do?**
+
+It predicts the class of an item given its features.
+It calculates the probability of each class and picks the one with the highest probability.
+
+**Formula:**
+
+P(Class | Features) = [P(Features | Class) * P(Class)] / P(Features)
+
+Steps: 
+- Calculate prior probabilities for each class
+**P(Class)**: Count how many times each class appears in the dataset and divide by the total number of items.
+  
+- Calculate likelihoods for each feature given the class
+For each feature, calculate **P(Feature | Class)** using the frequency of feature occurrences within that class.
+
+The algorithm assumes the features are independent, so this becomes: **P(Features | Class) = P(Feature1 | Class) * P(Feature2 | Class) * ...**
+
+- Multiply the prior and likelihoods for each class
+For each class, calculate the total probability:
+
+**P(Class) * P(Feature1 | Class) * P(Feature2 | Class) * ...**
+  
+- Choose the class with the highest probability
+The class with the largest result is the predicted class.
