@@ -179,3 +179,7 @@ It calculates the probability of each class and picks the one with the highest p
 **Formula:**
 
 P(Class | Features) = [P(Features | Class) * P(Class)] / P(Features)
+
+We don't calculate **P(Features)** because they are same for all clases and it acts like a scaling factor but doesn't change the probability.
+
+<img width="910" alt="image" src="https://github.com/user-attachments/assets/3d10222d-7e20-47be-afff-788146df2bcb" />
