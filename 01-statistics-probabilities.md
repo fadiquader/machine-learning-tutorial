@@ -36,27 +36,52 @@ print('{} appeared {} times in the dataset'.format(mode[0][0], mode[1][0])) # 1.
 ```
 
 #### Dispersion, Covariance and Correlation  
-- The dispersion of a distribution refers to how widely spread sample data points are in that population. It explains the amount of variability present in a distribution, that is how widely do data points vary across across a central location.”
+- The dispersion of a distribution refers to how widely spread sample data points are in that population. It explains the amount of variability present in a distribution, that is how widely do data points vary across across a central location.
 
 <img width="444" alt="image" src="https://github.com/user-attachments/assets/0543d503-bdf8-4eb0-b009-b9cec678e6ce" />
 
-a. Distribution **A** has low dispersion. This is because most of its values are centered in the middle
-b. Distribution **B** has greater dispersion as values appear to be located across a broader range.
-c. Distribution **C** shows the most variation.
+- Distribution **A** has low dispersion. This is because most of its values are centered in the middle
+- Distribution **B** has greater dispersion as values appear to be located across a broader range.
+- Distribution **C** shows the most variation.
 
 A or B and its height is very low indicating small values for measures of central tendency such as the mean. Some ways of **Statistical dispersion** is measured includes variance, standard deviation and interquartile range. <br />
 Standard deviation formula
 
 <img width="424" alt="image" src="https://github.com/user-attachments/assets/b73af820-06ea-449c-ae5e-d949f7c0ca9d" />
 
-It should be noted that variance is the square of standard deviation which defines how much values of a variable are away from its mean. < br />
+It should be noted that variance is the square of standard deviation which defines how much values of a variable are away from its mean. <br />
 
 Covariance measures how well two random variables vary in line with each other. The covariance of X and Y tells us how much a change in X results in a corresponding change in Y. Covariance merely tells us whether variables are positively or negatively correlated so we use something called Correlation.
+example: as study hours increase, exam scores also increase
 
 <img width="455" alt="image" src="https://github.com/user-attachments/assets/9802c2d7-9d84-430f-bad5-450bc5144cf1" />
 
 
+The correlation is defined as the covariance normalized (divided) by the square root of the product of the variance of each random variable.
 
+<img width="427" alt="image" src="https://github.com/user-attachments/assets/5c926ed4-2db7-458f-a943-5e1397bb7c19" />
+
+The values for correlation lies in the range -1 to 1. With 1 indicating that there is positive correlation between variables and -1 indicating negative correlation.
+
+<img width="415" alt="image" src="https://github.com/user-attachments/assets/b75eef85-cbb0-43f8-8a1a-1ce99132db69" />
+
+```py
+import numpy as np
+
+x = np.random.normal(size=2)  
+y = np.random.normal(size=2)”
+   
+z = np.vstack((x, y)) # We stack x and y vertically to produce z using the line of code below.  
+c = np.cov(z.T)  
+print(c) # [[0.0865..., 0.0200...], [..., ...]]
+
+# correlation
+from scipy.stats.stats import pearsonr     
+a = [1,4,6]
+b = [1,2,3]  
+corr = pearsonr(a,b)  
+print(corr) # (0.99.., 0.073...)
+```
 
 #### inferential statistics
 Is concerned with making predictions about a population through the study of a sample from that population. It discovers trends within a sample and then tries to generalize those trends to the wider population. 
