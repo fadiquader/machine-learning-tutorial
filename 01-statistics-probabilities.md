@@ -69,7 +69,7 @@ The values for correlation lies in the range -1 to 1. With 1 indicating that the
 import numpy as np
 
 x = np.random.normal(size=2)  
-y = np.random.normal(size=2)”
+y = np.random.normal(size=2)
    
 z = np.vstack((x, y)) # We stack x and y vertically to produce z using the line of code below.  
 c = np.cov(z.T)  
@@ -88,3 +88,42 @@ Is concerned with making predictions about a population through the study of a s
 It is made up of two parts, estimation of parameters and testing out hypothesis. The results of inferential statistics are usually presented as probabilities that show the confidence of particular parameters or events being true.
 
 ## Probability
+### Dependence and Independence  
+Probability is a measure of how likely we feel an event would occur. Probability is therefore a measure of likelihood. It is usually a value between 0 and 1 with 0 indicating impossibility, that is the event would never occur and 1 means certainty, the event is sure to occur. <br/>
+In probability, two events are said to be **dependent** if the occurrence of the first event directly affects the probability of the second event occurring. An example of dependent events are writing a book and getting published. To get published, you must first write a book. The probability of getting published directly depends on writing a book. The order is important as it cannot be changed. Writing a book must occur first before any publication. <br />
+
+**Independent** events are those events whose probability of occurrence are not dependent on each other. The fact that a first event has occurred does not in any way mean that a second event would occur or not. Both events are not linked as they are independent. To determine whether two events are independent, we first ask ourselves if both events can happen in any order. If the answer is yes, we ask ourselves a second question, does one event affect the outcome of the other. If the answer is no, then we have been able to prove that both events are completely independent of each other. An example of independent events are buying a new phone and eating your favorite meal. Those events are not dependent on each other. It is possible to imagine them occurring in any order. The fact that you just bought a new phone does not in any way affect the probability of you eating your favorite meal. 
+
+For two independent events lets say A and B. The probability of event A occurring given that event B has occurred is equal to the probability of A.  
+       
+P(A|B) = P(A)  
+
+P(B|A) = P(B)  
+       
+What this means is that whether or not event B has occurred, it does not affect the probability of A occurring because the probability of A is only dependent on itself, that is event A does not depend on external events.
+
+The probability of two independent events occurring is equal to the product of their individual probabilities.  
+       
+P(A∩B) = P(A)·P(B)
+
+### Conditional Probability  
+The measure of the probability of an event, say A occurring, given the knowledge that another event, say B, has occurred. Conditional probability deals with the probability of occurrence of an event in relation to other events. To define this formally, the probability of A given B is equal to the probability of the intersection of A and B (that is both events occur) divided by the probability of B.  
+       
+P(A|B) = P(A∩B)/P(B)  
+
+P(A|B) means probablity of A given B
+
+### Random Variables  
+The types of variables whose values are given by random processes. What this means is random variables maps the outcome of a random process to numbers that can be used in probability theory. An example of a random process is throwing a dice. The outcome is clearly random and cannot be predetermined. However, we can assign numbers to those random outcomes, the numbers so assigned would be quantities of a random variable. Random variables are also measurable and contain numbers like regular variables in algebra but the key difference is that they are produced by a random process.
+
+P(getting a number greater than 3 after rolling a dice once)  
+
+But if we define the random process using random variables, the notation can be simplified greatly:  
+       
+X = getting a number greater than 3 after rolling a dice once  
+       
+P(X > 3)
+
+### Bayes’ Theorem and Naive Bayes Algorithm
+
+
