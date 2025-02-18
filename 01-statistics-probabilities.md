@@ -179,26 +179,3 @@ It calculates the probability of each class and picks the one with the highest p
 **Formula:**
 
 P(Class | Features) = [P(Features | Class) * P(Class)] / P(Features)
-
-Steps: 
-- Calculate prior probabilities for each class
-**P(Class)**: Count how many times each class appears in the dataset and divide by the total number of items.
-  
-- Calculate likelihoods for each feature given the class
-For each feature, calculate **P(Feature | Class)** using the frequency of feature occurrences within that class.
-
-The algorithm assumes the features are independent, so this becomes: 
-
-**P(Features | Class) = P(Feature1 | Class) * P(Feature2 | Class) * ...**
-
-- Multiply the prior and likelihoods for each class
-For each class, calculate the total probability:
-
-**P(Class) * P(Feature1 | Class) * P(Feature2 | Class) * ...**
-  
-- Choose the class with the highest probability
-The class with the largest result is the predicted class.
-
-Finally, the formula becomes:
-
-P(Class | Features) ∝ P(Class) * P(Feature1 | Class) * P(Feature2 | Class) * ...
