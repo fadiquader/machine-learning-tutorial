@@ -88,4 +88,11 @@ A good machine learning algorithm should strive to achieve **low bias and low va
 
 <img width="410" alt="image" src="https://github.com/user-attachments/assets/d81d3ae2-5c2d-4cb7-a0e4-587b56a8a5b7" />
 
+The top left image represents a model that has low bias and low variance. This is the ideal model as it has learnt to hit the target (produce correct classification) and usually hits the target most of the time (does not vary with each throw). The image at the top right shows a model that exhibits high variance and low bias. Even if it does not make a lot of assumptions, its predictions are spread all over the board which means its performance varies widely (high variance). The image on the bottom left depicts a model with high bias and low variance. The shots are not all over the board but in a specific location. This location is however far from the target meaning the model is biased because of simplistic assumptions. Finally, the image on the bottom right shows a model with high bias and high variance. The shots on the board vary widely and are far away from the target. This is the worst kind of model as it hasn’t learnt any useful representation.
+
+### Feature Extraction and Selection
+Feature extraction involves performing transformation on input features that produce other features that are more analyzable and informative. Feature extraction may occur by combining original features to create new features which are better suited for the modelling problem. An example of feature extraction is Principal Component Analysis (PCA). 
+
+**Feature selection** is choosing a subset of features from the original input features. The features selected are those that show the most **correlation** with **the target variable**, that is those features that drive the predictive capability of the model. Both **feature extraction** and **feature selection** leads to **dimensionality reduction**.
+
 
