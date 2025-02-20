@@ -72,6 +72,38 @@ The second plot shows an optimal case where the optimization objective has been 
 
 The last plot illustrates a case of overfitting. The decision boundary is convoluted because the classifier is responding to noise by trying to correctly classify every data point in the training set. The accuracy of this classifier would be perfect on the training set but it would perform horribly on new examples because it optimized its performance only for the training set.
 
+**Simple explaination:**
+
+**Plot 1: Underfitting**
+
+What's Happening: This plot shows a classification model that uses a straight line to separate two classes of data points (red 'x's and blue circles).
+
+Why It's Underfitting: The straight line is too simple and doesn't capture the real pattern of how the data points are distributed. It misses most of the data points and fails to separate the classes effectively.
+
+Simple Explanation: Imagine trying to split a group of kids and adults using just their shoe size. If you pick a line that only separates really small shoes from really big shoes, you'll miss a lot of kids and adults because not all kids have really small shoes, and not all adults have really big shoes. That's underfitting.
+
+**Plot 2: Optimal Fitting**
+
+What's Happening: This plot shows a model that has found a good balance between fitting the data and generalizing to new data. It uses a curve that separates the two classes of data points.
+
+Why It's Optimal: Even though the model doesn't get every single data point right (some are misclassified), it captures the general trend and separates the classes well.
+
+Simple Explanation: Going back to the kids and adults example, if you use an age line that separates them based on a typical age range (like 12 years old), you might not get every single kid and adult right (some tall kids might be older than 12, and some short adults might be younger), but overall, you'll do a good job of separating them. That's optimal fitting.
+
+**Plot 3: Overfitting**
+
+What's Happening: This plot shows a model that has a very complex boundary, trying to separate every single data point perfectly.
+Why It's Overfitting: The model is too focused on getting every data point right in the training set, even the ones that are outliers or due to noise. This makes the model too complex and specific to the training data.
+Simple Explanation: If you try to separate kids and adults by using every single data point (like height, weight, shoe size, etc.), you might end up with a very complicated set of rules that work perfectly for the group you're looking at but fail when you try to apply them to a new group. That's overfitting.
+
+**Summary**
+
+Underfitting: The model is too simple and misses most of the data's patterns.
+
+Optimal Fitting: The model finds a good balance, capturing the general trends without trying to get every single point perfect.
+
+Overfitting: The model is too complex, fitting the training data perfectly but failing to generalize to new data.
+
 ### Correctness
 The evaluation metric chosen depends on the type of learning problem. Accuracy is a popular evaluation metric but it is not suitable for all learning problems. Other measures for evaluation include recall, precision, sensitivity, specificity, true positive rate, false positive rate etc. The evaluation used should be in line with the goals of the modelling problem.
 
