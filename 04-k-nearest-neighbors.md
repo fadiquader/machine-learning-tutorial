@@ -34,15 +34,18 @@ At training time, the nearest neighbor algorithm simply memorizes all values of 
 You want to classify a new fruit with weight 170 grams and color 5.
 
 1. **Calculate Distances**:
+
+<img width="473" alt="image" src="https://github.com/user-attachments/assets/6e246dc9-682b-4040-9837-e2b9474a3436" />
+
 <img width="676" alt="image" src="https://github.com/user-attachments/assets/53c20d51-9dc5-40ad-8476-6ab467512354" />
 
 
-2. **Find Nearest Neighbors**:
+3. **Find Nearest Neighbors**:
    - Let’s choose \(K=2\). The two nearest neighbors are:
      - C (distance 10.0, class Apple)
      - A (distance 20.1, class Apple)
 
-3. **Vote**:
+4. **Vote**:
    - Both nearest neighbors are classified as Apple. Therefore, the new fruit is classified as an Apple.
 
 ## Example: Predicting House Prices (Regression)
