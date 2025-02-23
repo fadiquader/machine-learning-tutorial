@@ -76,5 +76,12 @@ You want to predict the price of a house with size 2200 sq ft and 3 bedrooms.
 
 So, the predicted price for the new house is \$350,000.
 
+## The Curse of Dimensionality
+K-NN struggles in high dimensional input spaces like those encountered in images. 
+This is because the similarity measure as expressed by the distance metric is very limited and cannot properly model this high dimensional space. 
+In general, machine learning algorithms try to reduce the number of dimensions so that intuitions we have about low dimensional spaces would still hold true. The accuracy or performance of algorithms usually suffer when the number of dimensions increase. 
+This is known as the curse of dimensionality.
+
+
 ### References: 
 - k nearest neighbor (kNN): how it works https://www.youtube.com/watch?v=k_7gMp5wh5A
