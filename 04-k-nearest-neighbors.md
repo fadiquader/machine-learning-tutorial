@@ -1,4 +1,4 @@
-### K-Nearest Neighbors
+## K-Nearest Neighbors
 
 Nearest neighbor algorithm is an algorithm that can be used for regression and classification tasks but is usually used for classification because it is simple and intuitive.
 
