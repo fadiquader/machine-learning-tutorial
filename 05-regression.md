@@ -33,6 +33,12 @@ In multiple linear regression, there are two or more independent variables, that
 
 <img width="409" alt="image" src="https://github.com/user-attachments/assets/f274ee25-613b-49d0-8cde-8d85c7c571f7" />
 
-**Example:** Predict the price of a house in a neighborhood given information about the house in the form of features.
+<br/>
 
+<img width="423" alt="image" src="https://github.com/user-attachments/assets/1986d601-9988-4e05-ab1d-d82cf74a9309" />
 
+**The coefficients** are the learnt parameters for each predictor.
+
+**The mean square error** represents how far off our predictions are from the actual values.
+
+**Variance score** is the coefficient of determination which gives the overall performance of the model. A variance score of 1 is a perfect model, so it is clear that with a score of 0.72, the model has learnt from the data.
