@@ -35,4 +35,5 @@ Random forests are an extension of decision trees whereby several decision trees
 
 The tree is made up of several trees trained on different instances of the dataset. The attributes in each decision node are also randomized. Finally, the output prediction is an ensemble of the classification of each decision tree.
 
-
+### References: 
+- https://www.youtube.com/watch?v=Pz6xX6rK5M4&list=PLBv09BD7ez_4_UoYeGrzvqveIR_USBEKD
