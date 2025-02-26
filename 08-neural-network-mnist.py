@@ -19,8 +19,12 @@ y_test = tf.keras.utils.to_categorical(y_test, 10)
 # 2. Define the model with default weights and biases
 model = tf.keras.models.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),  # Input layer
+    # 128 is a common choice in many neural network architectures. It is a power of 2, which can be beneficial for computational efficiency
+    # ReLU (Rectified Linear Unit) introduces non-linearity into the model
     tf.keras.layers.Dense(128, activation='relu'),  # Hidden layer 1
+    # This reduction in size helps the model to progressively distill the most important features extracted by the first layer
     tf.keras.layers.Dense(64, activation='relu'),   # Hidden layer 2
+    # Converts raw output scores (logits) into a probability distribution, suitable for multiclass classification and compatible with categorical cross-entropy loss.
     tf.keras.layers.Dense(10, activation='softmax') # Output layer
 ])
 
