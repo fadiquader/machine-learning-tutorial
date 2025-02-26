@@ -17,6 +17,7 @@ y_train = tf.keras.utils.to_categorical(y_train, 10)
 y_test = tf.keras.utils.to_categorical(y_test, 10)
 
 # 2. Define the model with default weights and biases
+# The default weights and learning rate are often set automatically by the framework
 model = tf.keras.models.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),  # Input layer
     # 128 is a common choice in many neural network architectures. It is a power of 2, which can be beneficial for computational efficiency
