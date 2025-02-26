@@ -115,3 +115,93 @@ Let's say the network initially made a wrong decision. It thought you should be 
 - **Backpropagation**: This is how the network learns from its mistakes and adjusts its weights and biases to make better decisions.
 
 By repeating this process many times with different examples, the network gets better at making the right decisions!
+
+Sure! Let's dive deeper into a multi-layer neural network (MLN) and see how it works with hidden layers and how the weights change in each layer using backpropagation. We'll use a simple example to make it easy to understand.
+
+### More on Multi-Layer Neural Network (MLN)
+
+### Example
+
+Let's use the same example of deciding whether to let someone into a club based on height and age. But this time, we'll add a hidden layer to make the decision process more complex.
+
+#### Input Layer
+- **Height (H)**: 6 feet
+- **Age (A)**: 25 years
+
+#### Hidden Layer 1
+- **Neuron 1**: Uses height and age to make a decision.
+- **Neuron 2**: Also uses height and age but might weigh them differently.
+
+#### Output Layer
+- **Final Decision**: Based on the outputs from the hidden layer.
+
+### Weights and Biases
+Each connection between neurons has a weight, and each neuron has a bias. These are the parameters that the network will adjust to learn.
+
+### Activation Function
+Each neuron uses an activation function. Let's use the ReLU function for simplicity:
+- If the input is positive, pass it forward.
+- If the input is negative, don't pass it forward.
+
+### Example with Hidden Layers
+
+#### Step 1: Forward Pass
+
+1. **Input Layer**:
+   - Height (H) = 6 feet
+   - Age (A) = 25 years
+
+2. **Hidden Layer 1**:
+   - Neuron 1:
+     - Weight for height (W1) = 2
+     - Weight for age (W2) = 3
+     - Bias (B1) = 5
+     - Calculation: Weighted Sum = (6 * 2) + (25 * 3) + 5 = 12 + 75 + 5 = 92
+     - Activation: ReLU(92) = 92 (since 92 is positive)
+   - Neuron 2:
+     - Weight for height (W3) = 1
+     - Weight for age (W4) = 4
+     - Bias (B2) = 10
+     - Calculation: Weighted Sum = (6b* 1) + (25 * 4) + 10 = 6 + 100 + 10 = 116
+     - Activation: ReLU(116) = 116 (since 116 is positive)
+
+3. **Output Layer**:
+   - Weight for Neuron 1 output (W5) = 0.5
+   - Weight for Neuron 2 output (W6) = 0.3
+   - Bias (B3) = 20
+   - Calculation: Weighted Sum = (92 * 0.5) + (116 * 0.3) + 20 = 46 + 34.8 + 20 = 100.8 
+   - Activation: ReLU(100.8) = 100.8 (since 100.8 is positive)
+
+The final decision is based on the output of the output layer. If the threshold is 100, then 100.8 means you get in.
+
+### Step 2: Backpropagation
+
+Now, let's say the network made a mistake. It let you in, but you shouldn't have been let in. Here's how it adjusts:
+
+1. **Calculate Error**: The network sees the mistake. Let's say the error is the difference between the actual output (100.8) and the correct output (let's say it should have been 90 to not let you in).
+
+2. **Backward Pass**:
+   - **Output Layer**:
+     - Adjust weights and bias to reduce the error. For simplicity, let's say we reduce W5 and W6 slightly and adjust B3.
+   - **Hidden Layer 1**:
+     - Adjust weights and biases in the hidden layer based on the changes in the output layer. For example, reduce W1, W2, W3, and W4 slightly and adjust B1 and B2.
+
+### Example of Weight Adjustment
+
+Let's say we reduce the weights by a small amount (let's say 0.1 for simplicity):
+
+1. **Output Layer**:
+   - New W5 = 0.5 - 0.1 = 0.4
+   - New W6 = 0.3 - 0.1 = 0.2
+   - New B3 = 20 - 0.1 = 19.9
+
+2. **Hidden Layer 1**:
+   - New W1 = 2 - 0.1 = 1.9
+   - New W2 = 3 - 0.1 = 2.9
+   - New W3 = 1 - 0.1 = 0.9
+   - New W4 = 4 - 0.1 = 3.9
+   - New B1 = 5 - 0.1 = 4.9
+   - New B2 = 10 - 0.1 = 9.9
+  
+sts the weights and biases in each layer to reduce the error and improve the decision-making process.
+
